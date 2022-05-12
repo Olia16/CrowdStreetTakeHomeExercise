@@ -5,7 +5,7 @@ needs to be available on the opening day of the building in 1 week.
 Write tests scenarios that you would execute to ensure the elevator is
 ready to use in time for the release.
 
---------------------------------------
+-------------------------------------------
 Answer:
 User stories:
 1- Verify the dimensions of the elevator as expected, weight,height,volume
@@ -18,4 +18,22 @@ User stories:
 8- Verify the sensor, when lift is going to close and if someone has just put any object or body parts in between the lift’s doors
 9- Verify that lift doors are closed when lift is moving down or upward
 10- Verify the speed of elevator, landing speed
+
+-------------------------------------------------
+Question:
+The 5th floor will have a broken elevator button.
+What do you do?
+
+
+-------------------------------------------------
+Answer:
+1.Try few times to make sure 5th floor button is broken
+2.Let the person know, who was working on it
+3.Log it as a bug
+4.Provide brief explanation, what was expected and what is the actual result
+5.Provide evidence that proves it is broken
+6.Assign it to the person who was working on it
+7.Link it to the user story
+8.when fixed, re-test it again
+
 
