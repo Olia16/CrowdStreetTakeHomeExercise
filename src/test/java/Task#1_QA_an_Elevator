@@ -1,0 +1,20 @@
+
+#1 Manual - QA an Elevator
+Scenario: You have to QA a 10 story new elevator. The elevator
+needs to be available on the opening day of the building in 1 week.
+Write tests scenarios that you would execute to ensure the elevator is
+ready to use in time for the release.
+
+--------------------------------------
+Answer:
+User stories:
+1- Verify the dimensions of the elevator as expected, weight,height,volume
+2- Verify the buttons: open,close,emergency and floor numbers are displayed on the panel
+3- Verify that display shows each floor number you are on
+4- Verify that all the buttons works as expected; lift stops at right floor (if user click on 3nd floor then lift should stop on 3nd floor etc)
+5- Verify that maximum number of people/weight and all emergency instructions written on wall.
+6- Verify that when weight exceed from standard than it should give some alert message
+7- Verify up and down button outside the elevator
+8- Verify the sensor, when lift is going to close and if someone has just put any object or body parts in between the lift’s doors
+9- Verify that lift doors are closed when lift is moving down or upward
+10- Verify the speed of elevator, landing speed
