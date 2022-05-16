@@ -1,4 +1,4 @@
-@login
+@task#2
   Feature: Create an account
 
     Scenario: create an account on crowdstreet
@@ -11,8 +11,9 @@
       And User needs to confirm password
       And User needs to answer if he is accredited investor
       And User has to accept terms and conditions by clicking on the button
-      Then User has to click create account button
       And User needs to click ok on captcha
+      Then User has to click create account button
+
 
 
 

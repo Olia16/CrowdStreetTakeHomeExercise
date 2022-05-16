@@ -6,6 +6,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import javafx.util.converter.LocalDateStringConverter;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.CreateAccountPage;
 import pages.LoginPage;
 import utils.ConfigurationReader;
@@ -71,11 +77,25 @@ public class CreateAccountStepDefs {
 
     @And("User needs to click ok on captcha")
     public void userNeedsToClickOkOnCaptcha() {
+
+        new WebDriverWait(Driver.getDriver(), 10).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[@title='reCAPTCHA']")));
+        new WebDriverWait(Driver.getDriver(), 20).until(ExpectedConditions.elementToBeClickable(accountPage.captchaBtn));
         accountPage.captchaBtn.click();
+
+
+
     }
+
     @Then("User has to click create account button")
-    public void user_has_to_click_create_account_button() {
-        accountPage.submitBtn.click();
+    public void user_has_to_click_create_account_button() throws InterruptedException {
+        Driver.getDriver().switchTo().parentFrame();
+        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
+        js.executeScript("window.scrollBy(0,780)");
+
+
+        new WebDriverWait(Driver.getDriver(), 20).until(ExpectedConditions.elementToBeClickable(accountPage.createAccountBtn));
+        js.executeScript("arguments[0].click();", accountPage.createAccountBtn);
+
 
 
 

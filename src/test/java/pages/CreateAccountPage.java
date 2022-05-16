@@ -23,14 +23,14 @@ public class CreateAccountPage extends  BasePage{
     @FindBy(id = "hasAgreedTos")
     public WebElement hasAgreeBtn;
 
-    @FindBy(xpath = "//div[@role='presentation']")
+    @FindBy(xpath = "//span[@id='recaptcha-anchor']/div[1]")
     public WebElement captchaBtn;
 
     @FindBy(id = "accreditedYes")
     public WebElement accreditedBtn;
 
     @FindBy(xpath = "//button[@data-testid='submit-button']")
-    public WebElement submitBtn;
+    public WebElement createAccountBtn;
 
 
 

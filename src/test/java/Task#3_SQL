@@ -1,0 +1,77 @@
+Task A:
+[A] Design and populate an associative table called people_vehicle
+to support the following:
+- Mary has a Truck
+- John has two Cars and two Trucks
+- Chen has no vehicles
+Share the contents of the people_vehicle table in your results in an
+email.
+
+---------------------------------------------------------------------
+Solution:
+
+CREATE TABLE people_vehicle(
+name varchar(30) Primary Key,
+vehicle varchar(30),
+number_of_vehicles INTEGER
+);
+
+INSERT INTO people_vehicle (name,vehicle,number_of_vehicles) values ('John', 'Car=2,Truck=2', 4);
+INSERT INTO people_vehicle(name,vehicle,number_of_vehicles) values ('Mary', 'Truck=1', 1);
+INSERT INTO people_vehicle (name,vehicle,number_of_vehicles) values ('Chen', 'none', 0);
+
+---------------------------------------------------------------------
+Task B:
+[B] Design and populate an associative table called people_pet to
+support the following:
+- Mary has no pets
+- John has a Dog
+- Chen has a Parrot and a Cat
+Share the contents of the people_pet table in your results in an
+email.
+
+---------------------------------------------------------------------
+Solution:
+
+CREATE TABLE people_pet(
+people_name varchar(30) PRIMARY KEY,
+pet varchar(30),
+number_of_pets INTEGER
+);
+
+INSERT INTO people_pet (people_name,pet,number_of_pets) values ('John', 'Dog=1', 1);
+INSERT INTO people_pet (people_name,pet,number_of_pets) values ('Mary', 'none', 0);
+INSERT INTO people_pet (people_name,pet,number_of_pets) values ('Chen','Parrot=1, Cat=1', 2);
+
+---------------------------------------------------------------------
+Task C:
+[C] Write a query that generates exactly this result set:
+name vehicles pets
+John Car=2, Truck=2 Dog=1
+Mary Truck=1 None
+Chen None Parrot=1, Cat=1
+
+---------------------------------------------------------------------
+Solution:
+
+select v.name,v.vehicle,p.pet
+from people_vehicle v inner join people_pet p on v.name=p.people_name;
+
+
+---------------------------------------------------------------------
+Task D:
+
+[D] Write a query that finds all people who have at least 2 vehicles or 2 pets.
+Share the query in your response.
+
+---------------------------------------------------------------------
+Solution:
+
+select v.name,number_of_vehicles,number_of_pets
+from people_vehicle v inner join people_pet p on v.name=p.people_name
+where number_of_vehicles >= 2 OR number_of_pets >=2;
+
+
+
+
+
